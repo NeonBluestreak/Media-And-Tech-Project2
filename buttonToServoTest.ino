@@ -43,3 +43,34 @@ void loop() {
 
  
 }
+
+/*
+if (piezoVal > some number) {
+ turn LED on;
+ activate servo, oasis entrence opens;
+}
+
+if (Aang is next to Zuko, switch on) {
+ activate servo, L2 cave opens;
+ }
+
+if (Aang is next to Koh, switch on) {
+ activate servo, Heibei revealed;
+}
+
+if (Aang is on Heibei, switch on) {
+ turn LED on;
+}
+
+if (fireball kills koi fish, switch on) {
+ activate servo, moon disappears;
+}
+
+if (Aang is in oasis, switch on) {
+ activate servo, Kaiju appears;
+}
+
+if (Princess Yue is in oasis, switch on) {
+ activate servo, spirit & moon appear;
+}
+*/
