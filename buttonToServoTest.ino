@@ -45,6 +45,40 @@ void loop() {
 }
 
 /*
+---------------------Interaction #1-----------------------
+#include <Servo.h>
+
+Servo firstServo;
+int sensorVal;  //value register from piezo
+const int sensorPin = A0;
+int ledPin = 6;  //fire in the village
+
+int wallHit = 0;
+
+
+void setup() {
+  firstServo.attach(9);  //servo to pin 9
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  sensorVal = analogRead(sensorPin);
+  Serial.println(sensorVal);
+
+  if (sensorVal >= 30) {
+    wallHit++;
+  }
+
+  if (wallHit > 1) {
+    digitalWrite(ledPin, HIGH);
+    firstServo.write(180);
+  } else {
+    firstServo.write(0);
+  }
+}
+
+----------------------draft---------------------------
 if (piezoVal > some number) {
  turn LED on;
  activate servo, oasis entrence opens;
