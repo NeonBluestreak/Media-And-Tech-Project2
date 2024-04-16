@@ -18,7 +18,7 @@ int switch3State = 0;
 
 //------------------------------------
 Servo servo46;  // moon Yue servo
-const int switch4 = 1;  // switch fireball to koi
+const int switch4 = 11;  // switch fireball to koi
 int switch4State = 0; 
 
 const int switch6 = 5; //switch Yue to Koi
@@ -58,7 +58,7 @@ void loop() {
   sensorVal = analogRead(sensorPin);
   Serial.println(sensorVal);
 
-  if (sensorVal >= 30) {
+  if (sensorVal >= 23) {
     wallHit++;
   }
 
