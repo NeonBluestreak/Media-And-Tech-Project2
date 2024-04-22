@@ -83,21 +83,20 @@ void loop() {
   } else {
     digitalWrite(ledTrail, LOW);  //LED off
   }
-}
 //------------------------------------interaction 4/6
   switch4State = digitalRead(switch4);
   switch6State = digitalRead(switch6);
 
   if (switch4State == HIGH) {
-    servo46.write(180);                    // waits 15 ms for the servo to reach the position
+    servo46.write(30);                    // waits 15 ms for the servo to reach the position
   } else {
-    servo46.write(0);
+    servo46.write(80);
   }
 
   if (switch6State == HIGH) {
-    servo46.write(180);                    // waits 15 ms for the servo to reach the position
+    servo46.write(55);                    // waits 15 ms for the servo to reach the position
   } else {
-    servo46.write(0);
+    servo46.write(80);
   }
 //------------------------------------interaction 5
   switch5State = digitalRead(switch5);
@@ -107,94 +106,4 @@ void loop() {
   } else {
     servo5.write(0);
   }
-
-/*
----------------------Interaction #1-----------------------
-#include <Servo.h>
-
-Servo firstServo;
-int sensorVal;  //value register from piezo
-const int sensorPin = A0;
-int ledPin = 6;  //fire in the village
-
-int wallHit = 0;
-
-
-void setup() {
-  firstServo.attach(9);  //servo to pin 9
-  pinMode(ledPin, OUTPUT);
-  Serial.begin(9600);
 }
-
-void loop() {
-  sensorVal = analogRead(sensorPin);
-  Serial.println(sensorVal);
-
-  if (sensorVal >= 30) {
-    wallHit++;
-  }
-
-  if (wallHit > 1) {
-    digitalWrite(ledPin, HIGH);
-    firstServo.write(180);
-  } else {
-    firstServo.write(0);
-  }
-}
----------------------Interaction #4-----------------------
-const int switch4 = 2;  // the number of the pushbutton pin
-const int ledTrail = 13;    // the number of the LED pin
-
-int switch4State = 0;  // variable for reading the pushbutton status
-
-void setup() {
-  // initialize the LED pin as an output:
-  pinMode(ledTrail, OUTPUT);
-  // initialize the pushbutton pin as an input:
-  pinMode(switch4, INPUT);
-}
-
-void loop() {
-  // read the state of the pushbutton value:
-  switch4State = digitalRead(switch4);
-
-  // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
-  if (switch4State == HIGH) {
-    // turn LED on:
-    digitalWrite(ledTrail, HIGH);
-  } else {
-    // turn LED off:
-    digitalWrite(ledTrail, LOW);
-  }
-}
-
-----------------------draft---------------------------
-if (piezoVal > some number) {
- turn LED on;
- activate servo, oasis entrence opens;
-}
-
-if (Aang is next to Zuko, switch on) {
- activate servo, L2 cave opens;
- }
-
-if (Aang is next to Koh, switch on) {
- activate servo, Heibei revealed;
-}
-
-if (Aang is on Heibei, switch on) {
- turn LED on;
-}
-
-if (fireball kills koi fish, switch on) {
- activate servo, moon disappears;
-}
-
-if (Aang is in oasis, switch on) {
- activate servo, Kaiju appears;
-}
-
-if (Princess Yue is in oasis, switch on) {
- activate servo, spirit & moon appear;
-}
-*/
